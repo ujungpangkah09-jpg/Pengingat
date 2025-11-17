@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pengingat Sekolah — Rumah & PR</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#5b4ce6"/>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero glass">
+      <div class="logo">🎓</div>
+      <div>
+        <h1>Pengingat Sekolah</h1>
+        <p class="lead">Siapkan buku & ingat PR — pengingat malam otomatis</p>
+      </div>
+    </header>
+
+    <section class="card glass controls">
+      <label for="prepare-time">Waktu Pengingat Malam</label>
+      <input id="prepare-time" type="time" value="20:00">
+      <div class="row">
+        <button id="enable-alarms" class="btn primary">Aktifkan Pengingat Malam</button>
+        <button id="disable-alarms" class="btn">Nonaktifkan</button>
+      </div>
+      <div class="muted">Notifikasi & suara akan muncul saat waktu tiba. Izinkan notifikasi saat diminta.</div>
+    </section>
+
+    <section class="card glass mt">
+      <h2>Jadwal (dibaca dari schedule.json)</h2>
+      <div id="schedule-list" class="schedule-list"></div>
+    </section>
+
+    <section class="card glass mt">
+      <h2>Daftar PR</h2>
+      <form id="pr-form" class="pr-form">
+        <input id="pr-subject" placeholder="Mata pelajaran (contoh: Matematika)" required>
+        <input id="pr-desc" placeholder="Deskripsi (contoh: Hal. 23)">
+        <input id="pr-due" type="date">
+        <button type="submit" class="btn primary">Tambah PR</button>
+      </form>
+      <div id="pr-list" class="pr-list"></div>
+    </section>
+
+    <footer class="footer muted">Versi PWA • Tema: Gradient ungu–biru (glassmorphism)</footer>
+  </main>
+
+  <audio id="alarm-sound" src="assets/alarm-soft.wav"></audio>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(e => console.warn('SW registration failed', e));
+    }
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>

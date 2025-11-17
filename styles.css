@@ -1,0 +1,29 @@
+/* styles.css - gradient ungu-biru glowing + glassmorphism */
+:root{
+  --bg1: linear-gradient(135deg,#5b4ce6 0%,#764ba2 60%,#f093fb 120%);
+  --glass: rgba(255,255,255,0.08);
+  --glass-2: rgba(255,255,255,0.06);
+  --muted: rgba(255,255,255,0.85);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto;min-height:100vh;background:var(--bg1);color:#fff;-webkit-font-smoothing:antialiased}
+.app{max-width:960px;margin:28px auto;padding:20px}
+.hero{display:flex;gap:16px;align-items:center;padding:20px;border-radius:16px}
+.logo{font-size:48px}
+.hero h1{margin:0;font-size:2rem;letter-spacing:0.2px}
+.lead{opacity:0.95;margin-top:6px}
+.card{padding:16px;border-radius:14px;margin-top:12px;box-shadow:0 12px 30px rgba(2,6,23,0.25)}
+.glass{background:var(--glass);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.08)}
+.controls input[type=time], .pr-form input[type=date], .pr-form input {padding:10px;border-radius:10px;border:none;background:rgba(255,255,255,0.95);color:#111;margin-right:8px}
+.row{display:flex;gap:8px;margin-top:10px}
+.btn{padding:10px 14px;border-radius:10px;border:none;cursor:pointer;background:rgba(255,255,255,0.06);color:white}
+.btn.primary{background:linear-gradient(90deg,#6a5dfc,#7a51c9);box-shadow:0 8px 20px rgba(106,93,252,0.22);font-weight:700}
+.mt{margin-top:18px}
+.muted{opacity:0.9;font-size:0.95rem;margin-top:8px}
+.schedule-list{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.schedule-day{padding:10px;border-radius:10px;background:linear-gradient(90deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01))}
+.slot{display:flex;justify-content:space-between;align-items:center;padding:8px;border-radius:8px;background:rgba(0,0,0,0.06)}
+.pr-list{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+.pr-item{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:8px;background:rgba(255,255,255,0.03)}
+.footer{margin-top:18px;opacity:0.9}
+@media (max-width:600px){.hero{flex-direction:row;gap:12px}.controls input[type=time]{width:120px;display:block;margin-top:8px}}
